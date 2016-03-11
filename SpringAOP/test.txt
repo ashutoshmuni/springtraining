@@ -1,0 +1,20 @@
+class Operations {
+
+	public void processData(String data1, String data2) {
+		//logic
+	}
+}
+
+class OperationsProxy extends Operations {
+
+	public void processData(String data1, String data2) {
+		logger.log("Inside processData"); //cross cutting concern
+		super.processData(data1, data2);
+		logger.log("Exiting processData");
+	}
+}
+
+main() {
+	Operations opr = framework.getBean("operations");
+	opr.processData("A", "B");
+}

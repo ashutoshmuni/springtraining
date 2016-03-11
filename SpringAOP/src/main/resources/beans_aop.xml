@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:aop="http://www.springframework.org/schema/aop" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+<!-- 	<bean id="opBean" class="com.spring.aop.Operation" />  
+    <bean id="trackMyBean" class="com.spring.aop.TrackOperation" />  
+ -->    
+    <bean id="arithmeticBean" class="com.spring.aop.Arithmetic" />  
+    <bean id="arithmeticAspectBean" class="com.spring.aop.ArithmeticAspect" />
+    
+    <bean id="collectionHandler" class="com.spring.aop.CollectionHandler" />
+    <bean id="performanceMonitor" class="com.spring.aop.PerformanceMonitor" />
+    
+   <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" />  
+    	
+
+
+
+
+
+
+
+
+
+
+<!--  
+<aop:config>  
+  <aop:aspect id="myaspect" ref="arithmeticAspectBean" >  
+     <aop:pointcut id="pointCutBefore"   
+         expression="execution(* com.spring.aop.Arithmetic.divide(..))" />  
+     <aop:before method="checkParameters" pointcut-ref="pointCutBefore" />  
+  </aop:aspect>  
+</aop:config>  
+  -->
+
+
+
+
+     
+</beans>
